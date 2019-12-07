@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Input from './inputNumber/input'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class  App extends Component{
+	constructor(props) {
+		super(props);
+		this.state ={
+			value: ''
+		}
+	}
+	value = ''
+
+	render() {
+		return (
+			<div>			
+			  <span>只能输入数字:</span>
+				<Input value={this.state.value}						
+				       onChange={(e) => {
+									this.setState({
+										value: e.target.value.replace(/[^\d.]/g, "")
+									})
+				}}
+				/>
+				<span>非受控:</span>
+				<Input defalutValue={this.value}  
+				  onChange={(e) => {
+					  //this.value = e.target.value.replace(/[^\d.]/g, "")
+				  }}/>
+			</div>
+		);
+	}
 }
 
 export default App;
+
