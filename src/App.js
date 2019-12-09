@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from './inputNumber/input'
+import confirm from './confirm/confirm'
 
 class  App extends Component{
 	constructor(props) {
@@ -28,6 +29,15 @@ class  App extends Component{
 				  }}/>
 			</div>
 		);
+	}
+	
+   async componentDidMount() {
+	 let res = await  confirm("您确定要删除吗？(此操作不可撤销)")
+	    if(res) {
+	        console.log("是")
+	    } else {
+	        console.log("否")
+	    }
 	}
 }
 

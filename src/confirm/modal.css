@@ -1,0 +1,72 @@
+html {
+    margin: 0;
+}
+body {
+    margin: 0;
+}
+
+.modal-wrapper {
+    --accent-color: rgb(0, 109, 235);
+    --radius: 5px;
+    --black: rgb(37, 37, 37);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(15px);
+}
+
+.modal-wrapper .modal-content-wrapper {
+    color: var(--black) !important;
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .3);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-wrapper .modal-content-wrapper .title {
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 1.3px;
+}
+
+.modal-wrapper .btns-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-wrapper .btns-wrapper button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: var(--radius);
+}
+
+.modal-wrapper .btns-wrapper button:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.modal-wrapper .btns-wrapper button:active {
+    opacity: .9;
+}
+
+.modal-wrapper .btns-wrapper .primary {
+    color: var(--accent-color);
+}
+
+.modal-wrapper .btns-wrapper .primary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}
